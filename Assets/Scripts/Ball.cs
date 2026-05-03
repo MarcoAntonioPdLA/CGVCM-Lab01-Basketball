@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class Ball : MonoBehaviour {
+    public GameManager gameManager;
     public Transform player;
     public Transform shootingPoint;
 
@@ -22,6 +23,7 @@ public class Ball : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collider) {
         if(collider.CompareTag("Ring")) {
+            gameManager.SetNewShootingArea();
             Debug.Log("Canasta");
         }
     }
