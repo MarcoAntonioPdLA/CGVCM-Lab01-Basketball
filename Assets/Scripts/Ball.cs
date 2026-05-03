@@ -1,16 +1,23 @@
 using UnityEngine;
 
-public class Ball : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+public class Ball : MonoBehaviour {
+    private Rigidbody rb;
+
+    private void Awake() {
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void EnablePhysics() {
+        rb.isKinematic = false;
+        rb.useGravity = true;
+    }
+
+    public void DisablePhysics() {
+        rb.isKinematic = true;
+        rb.useGravity = false;
+    }
+
+    public void Throw(Vector3 forceDirection, float force) {
+        rb.AddForce(forceDirection.normalized * force, ForceMode.Impulse);
     }
 }
