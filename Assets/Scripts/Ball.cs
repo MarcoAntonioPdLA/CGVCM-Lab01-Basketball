@@ -20,6 +20,12 @@ public class Ball : MonoBehaviour {
         }
     }
 
+    private void OnTriggerEnter(Collider collider) {
+        if(collider.CompareTag("Ring")) {
+            Debug.Log("Canasta");
+        }
+    }
+
     private void ReturnToPlayer() {
         rb.linearVelocity = Vector3.zero;
         DisablePhysics();
