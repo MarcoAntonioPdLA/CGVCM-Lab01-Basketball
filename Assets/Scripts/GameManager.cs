@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
     public Transform player;
     public PlayerInput playerInput;
 
-    public const int MAX_POINTS = 1;
+    public const int MAX_POINTS = 5;
     public int points = 0;
 
     private void Update() {
