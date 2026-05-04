@@ -12,6 +12,12 @@ public class GameManager : MonoBehaviour {
     public const int MAX_POINTS = 1;
     public int points = 0;
 
+    private void Update() {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame) {
+            Application.Quit();
+        }
+    }
+
     public void SetNewShootingArea() {
         float newX = Random.Range(-6.5f, 6.5f);
         float newZ = Random.Range(-6.5f, 2.5f);
