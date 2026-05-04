@@ -29,6 +29,7 @@ public class PlayerShoot : MonoBehaviour {
                 shootForce -= forceStep;
             }
             shootForce = Mathf.Clamp(shootForce, minForce, maxForce);
+            UIManager.Instance.UpdateForce(shootForce);
         }
         if (shootAction.WasPressedThisFrame() && hasBall) {
             Shoot();

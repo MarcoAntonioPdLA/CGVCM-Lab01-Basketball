@@ -5,7 +5,7 @@ public class Ball : MonoBehaviour {
     public Transform player;
     public Transform shootingPoint;
 
-    private const float TIME_TO_RETURN = 2f;
+    private const float TIME_TO_RETURN = 0.5f;
 
     private Rigidbody rb;
     private bool isReturning = false;
@@ -23,6 +23,7 @@ public class Ball : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collider) {
         if(collider.CompareTag("Ring")) {
+            gameManager.AddPoint();
             gameManager.SetNewShootingArea();
             Debug.Log("Canasta");
         }
